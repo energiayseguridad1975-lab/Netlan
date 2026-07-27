@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Contáctanos</h1>
+        <p>Estamos aquí para proteger y automatizar tu negocio</p>
+    </div>
+</section>
+
+<section class="contacto">
+    <div class="container">
+        <div class="contacto-grid">
+            <div class="contacto-info">
+                <h3>📬 Información de contacto</h3>
+                <p>📧 <strong>Email:</strong> <a href="mailto:dlopez@netlanweb.com" style="color: white; text-decoration: underline;">dlopez@netlanweb.com</a></p>
+                <p>📱 <strong>Teléfono:</strong> <a href="tel:528110828156" style="color: white; text-decoration: underline;">81 1082 8156</a></p>
+                <p>📍 <strong>Dirección:</strong> Monterrey, Nuevo León, México</p>
+                
+                <div class="horario">
+                    <h4>🕐 Horario de atención</h4>
+                    <p><strong>Lunes a Viernes:</strong> 9:00 - 18:00</p>
+                    <p><strong>Sábados:</strong> 10:00 - 14:00 (cita previa)</p>
+                </div>
+                
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <h4>📱 Síguenos</h4>
+                    <div class="social-links" style="justify-content: flex-start;">
+                        <a href="#" style="color: white;">📘</a>
+                        <a href="#" style="color: white;">📸</a>
+                        <a href="#" style="color: white;">🐦</a>
+                        <a href="#" style="color: white;">💼</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contacto-form">
+                <h3>✉️ Envíanos un mensaje</h3>
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                
+                <form method="POST" action="{{ url_for('contacto') }}" novalidate>
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="form-group">
+                        {{ form.nombre.label }}
+                        {{ form.nombre(class="form-control", placeholder="Tu nombre completo") }}
+                        {% if form.nombre.errors %}
+                            {% for error in form.nombre.errors %}
+                                <span class="error">❌ {{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-group">
+                        {{ form.email.label }}
+                        {{ form.email(class="form-control", placeholder="tu@email.com") }}
+                        {% if form.email.errors %}
+                            {% for error in form.email.errors %}
+                                <span class="error">❌ {{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-group">
+                        {{ form.telefono.label }}
+                        {{ form.telefono(class="form-control", placeholder="81 1234 5678") }}
+                        {% if form.telefono.errors %}
+                            {% for error in form.telefono.errors %}
+                                <span class="error">❌ {{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-group">
+                        {{ form.mensaje.label }}
+                        {{ form.mensaje(class="form-control", rows=5, placeholder="Cuéntanos sobre tu proyecto de seguridad...") }}
+                        {% if form.mensaje.errors %}
+                            {% for error in form.mensaje.errors %}
+                                <span class="error">❌ {{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    
+                    {{ form.enviar(class="btn-primary", style="width: 100%;") }}
+                </form>
+                
+                <p style="text-align: center; margin-top: 1.5rem; color: var(--gray); font-size: 0.9rem;">
+                    🔒 Tus datos están seguros. No compartiremos tu información con terceros.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

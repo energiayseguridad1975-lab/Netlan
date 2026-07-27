@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header" style="background: var(--gradient-secondary); min-height: 70vh; display: flex; align-items: center;">
+    <div class="container">
+        <h1 style="font-size: 6rem;">404</h1>
+        <p style="font-size: 2rem;">¡Ups! Página no encontrada</p>
+        <p style="font-size: 1.2rem; opacity: 0.8;">La página que buscas no existe o fue movida.</p>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn-primary">🏠 Volver al inicio</a>
+    </div>
+</section>
+{% endblock %}

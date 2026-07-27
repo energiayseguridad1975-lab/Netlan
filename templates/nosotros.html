@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Sobre Nosotros</h1>
+        <p>Conoce al equipo que protege y automatiza tu negocio</p>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos una empresa fundada en <strong>Monterrey</strong>, enfocada en servicios tecnológicos, monitoreo mediante cámaras de seguridad, control y automatización de accesos, ofreciendo a nuestros clientes soluciones vanguardistas que atienden a sus necesidades.</p>
+            <p>Con más de 10 años de experiencia en el sector, hemos ayudado a empresas de todos los tamaños a proteger sus instalaciones y optimizar sus procesos mediante tecnología de punta.</p>
+            
+            <div class="mision-vision">
+                <div class="mision">
+                    <h3>🎯 Misión</h3>
+                    <p>Ofrecer soluciones tecnológicas innovadoras en seguridad y automatización que superen las expectativas de nuestros clientes.</p>
+                </div>
+                <div class="vision">
+                    <h3>🚀 Visión</h3>
+                    <p>Ser la empresa líder en soluciones de seguridad y tecnología en el norte de México, reconocida por nuestra calidad e innovación.</p>
+                </div>
+            </div>
+            
+            <div class="values">
+                <h3>Nuestros valores</h3>
+                <ul>
+                    <li>🔒 <strong>Seguridad</strong> ante todo</li>
+                    <li>💡 <strong>Innovación</strong> constante</li>
+                    <li>🤝 <strong>Confianza</strong> y transparencia</li>
+                    <li>📈 <strong>Compromiso</strong> con la calidad</li>
+                    <li>🌱 <strong>Responsabilidad</strong> social</li>
+                </ul>
+            </div>
+            
+            <h2 style="margin-top: 3rem;">Nuestro equipo</h2>
+            <div class="equipo-grid">
+                {% for miembro in equipo %}
+                <div class="miembro animate-on-scroll">
+                    <span class="miembro-avatar">{{ miembro.avatar }}</span>
+                    <h4>{{ miembro.nombre }}</h4>
+                    <p>{{ miembro.cargo }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

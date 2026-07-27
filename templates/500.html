@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header" style="background: var(--gradient-dark); min-height: 70vh; display: flex; align-items: center;">
+    <div class="container">
+        <h1 style="font-size: 6rem;">500</h1>
+        <p style="font-size: 2rem;">Error interno del servidor</p>
+        <p style="font-size: 1.2rem; opacity: 0.8;">Algo salió mal. Estamos trabajando para solucionarlo.</p>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn-primary">🏠 Volver al inicio</a>
+    </div>
+</section>
+{% endblock %}

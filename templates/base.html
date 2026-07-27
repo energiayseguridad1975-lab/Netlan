@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NETLANWEB - Soluciones en seguridad, cámaras, control de accesos y automatización en Monterrey">
+    <title>NETLANWEB - {{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+</head>
+<body>
+    <!-- ===== NAVEGACIÓN ===== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="NETLANWEB">
+                    NETLAN<span>WEB</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}" class="{% if titulo == 'Inicio' %}active{% endif %}">Inicio</a></li>
+                <li><a href="{{ url_for('servicios') }}" class="{% if titulo == 'Servicios' %}active{% endif %}">Servicios</a></li>
+                <li><a href="{{ url_for('portafolio') }}" class="{% if titulo == 'Portafolio' %}active{% endif %}">Portafolio</a></li>
+                <li><a href="{{ url_for('nosotros') }}" class="{% if titulo == 'Nosotros' %}active{% endif %}">Nosotros</a></li>
+                <li><a href="{{ url_for('contacto') }}" class="btn-contacto-nav {% if titulo == 'Contacto' %}active{% endif %}">📩 Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== CONTENIDO ===== -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="NETLANWEB" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+                        NETLAN<span>WEB</span>
+                    </h3>
+                    <p>Soluciones tecnológicas en seguridad, cámaras, control de accesos y automatización en Monterrey.</p>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+                        <li><a href="{{ url_for('portafolio') }}">Portafolio</a></li>
+                        <li><a href="{{ url_for('nosotros') }}">Nosotros</a></li>
+                        <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="{{ url_for('servicios') }}">Cámaras</a></li>
+                        <li><a href="{{ url_for('servicios') }}">Control de Accesos</a></li>
+                        <li><a href="{{ url_for('servicios') }}">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📧 <a href="mailto:dlopez@netlanweb.com" style="color: rgba(255,255,255,0.6);">dlopez@netlanweb.com</a></p>
+                    <p>📱 <a href="tel:528110828156" style="color: rgba(255,255,255,0.6);">81 1082 8156</a></p>
+                    <p>📍 Monterrey, N.L.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ year }} NETLANWEB. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

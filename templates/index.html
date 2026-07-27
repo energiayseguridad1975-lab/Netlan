@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="animate-on-scroll">Seguridad y <span>Tecnología</span> para tu negocio</h1>
+            <p class="subtitle animate-on-scroll">Soluciones en cámaras de seguridad, control de accesos y automatización en Monterrey. Protegemos lo que más valoras.</p>
+            <div class="hero-buttons animate-on-scroll">
+                <a href="{{ url_for('contacto') }}" class="btn-primary">🔒 Solicita cotización</a>
+                <a href="{{ url_for('servicios') }}" class="btn-secondary">Ver servicios →</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-icon">🔒</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>Clientes satisfechos</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Cámaras instaladas</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Monitoreo continuo</p>
+            </div>
+            <div class="stat-item">
+                <h3>99%</h3>
+                <p>Efectividad garantizada</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <span class="tag">¿Por qué elegirnos?</span>
+            <h2>Somos tu mejor <span>opción</span></h2>
+            <p>Soluciones tecnológicas vanguardistas para proteger y automatizar tu negocio</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <span class="feature-icon">🛡️</span>
+                <h3>Seguridad Garantizada</h3>
+                <p>Sistemas de videovigilancia y control de accesos de última generación.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <span class="feature-icon">⚡</span>
+                <h3>Tecnología Avanzada</h3>
+                <p>Soluciones innovadoras con inteligencia artificial y análisis de video.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <span class="feature-icon">📡</span>
+                <h3>Monitoreo Remoto</h3>
+                <p>Accede a tus sistemas desde cualquier lugar, las 24 horas del día.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <span class="feature-icon">🔧</span>
+                <h3>Soporte Profesional</h3>
+                <p>Instalación y mantenimiento con los más altos estándares de calidad.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALERÍA ===== -->
+<section style="padding: 5rem 0; background: var(--light);">
+    <div class="container">
+        <div class="section-header">
+            <span class="tag">Nuestro trabajo</span>
+            <h2>Proyectos <span>recientes</span></h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll" style="background: white; padding: 1rem;">
+                <div style="background: var(--light); border-radius: var(--radius); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">📹</div>
+                <h3 style="margin-top: 1rem;">Sistema de Videovigilancia</h3>
+                <p>Torre Corporativa - 100+ cámaras</p>
+            </div>
+            <div class="feature-card animate-on-scroll" style="background: white; padding: 1rem;">
+                <div style="background: var(--light); border-radius: var(--radius); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🚪</div>
+                <h3 style="margin-top: 1rem;">Control de Accesos</h3>
+                <p>Planta Industrial - Biometría</p>
+            </div>
+            <div class="feature-card animate-on-scroll" style="background: white; padding: 1rem;">
+                <div style="background: var(--light); border-radius: var(--radius); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🏭</div>
+                <h3 style="margin-top: 1rem;">Automatización</h3>
+                <p>Centro Comercial - Domótica</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section style="padding: 5rem 0; background: var(--gradient-primary); color: white; text-align: center;">
+    <div class="container">
+        <h2 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem;">Protege tu negocio hoy</h2>
+        <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto 2.5rem;">Contáctanos y descubre cómo podemos ayudarte a proteger y automatizar tus instalaciones.</p>
+        <a href="{{ url_for('contacto') }}" class="btn-primary" style="background: white; color: var(--primary); padding: 0.9rem 3rem; border-radius: 50px; font-weight: 600;">📩 Solicita información</a>
+    </div>
+</section>
+{% endblock %}

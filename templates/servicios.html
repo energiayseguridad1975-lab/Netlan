@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Nuestros Servicios</h1>
+        <p>Soluciones tecnológicas integrales para la seguridad y automatización de tu negocio</p>
+    </div>
+</section>
+
+<section class="servicios-grid">
+    <div class="container">
+        <div class="grid-2col">
+            {% for servicio in servicios %}
+            <div class="servicio-card animate-on-scroll">
+                <span class="servicio-icon">{{ servicio.icono }}</span>
+                <h3>{{ servicio.nombre }}</h3>
+                <p>{{ servicio.descripcion }}</p>
+                <span class="detalles">{{ servicio.detalles }}</span>
+                <br><br>
+                <a href="{{ url_for('contacto') }}" class="btn-small">Solicitar información →</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA dentro de servicios -->
+<section class="cta" style="background: var(--gradient);">
+    <div class="container">
+        <h2>¿Necesitas una solución personalizada?</h2>
+        <p>Diseñamos sistemas a medida según las necesidades específicas de tu negocio.</p>
+        <a href="{{ url_for('contacto') }}" class="btn-primary" style="background: white; color: var(--primary);">📩 Contáctanos</a>
+    </div>
+</section>
+{% endblock %}

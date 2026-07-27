@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Nuestro Portafolio</h1>
+        <p>Conoce algunos de nuestros proyectos de seguridad y tecnología</p>
+    </div>
+</section>
+
+<section class="portafolio-grid">
+    <div class="container">
+        <div class="grid-2col">
+            {% for proyecto in proyectos %}
+            <div class="portafolio-item animate-on-scroll">
+                <span class="portafolio-icon">{{ proyecto.imagen }}</span>
+                <h3>{{ proyecto.titulo }}</h3>
+                <span class="categoria">{{ proyecto.categoria }}</span>
+                <p class="cliente">👤 {{ proyecto.cliente }}</p>
+                <p class="descripcion">{{ proyecto.descripcion }}</p>
+                <a href="{{ url_for('contacto') }}" class="btn-small">Ver proyecto →</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
