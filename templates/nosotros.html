@@ -41,7 +41,11 @@
             <div class="equipo-grid">
                 {% for miembro in equipo %}
                 <div class="miembro animate-on-scroll">
+                    {% if miembro.foto %}
+                    <img src="{{ url_for('static', filename='images/' + miembro.foto) }}" alt="{{ miembro.nombre }}" class="miembro-img">
+                    {% else %}
                     <span class="miembro-avatar">{{ miembro.avatar }}</span>
+                    {% endif %}
                     <h4>{{ miembro.nombre }}</h4>
                     <p>{{ miembro.cargo }}</p>
                 </div>

@@ -117,6 +117,20 @@ def portafolio():
             'imagen': '🏠',
             'descripcion': 'Sistema completo de seguridad y automatización para hogar inteligente con control por voz.',
             'cliente': 'Residencial Las Palmas'
+        },
+        {
+            'titulo': 'Sistema Hemsa', 
+            'categoria': 'Seguridad', 
+            'imagen': 'hemsa.jpeg',
+            'descripcion': 'Sistema de videovigilancia integral para instalaciones Hemsa con monitoreo en tiempo real.',
+            'cliente': 'Hemsa'
+        },
+        {
+            'titulo': 'Proyecto Villacero', 
+            'categoria': 'Automatización', 
+            'imagen': 'villacero.jpeg',
+            'descripcion': 'Sistema de control de accesos y automatización para planta Villacero.',
+            'cliente': 'Villacero'
         }
     ]
     return render_template('portafolio.html', 
@@ -127,7 +141,7 @@ def portafolio():
 @app.route('/nosotros')
 def nosotros():
     equipo = [
-        {'nombre': 'Ing. Carlos Rodríguez', 'cargo': 'Director General', 'avatar': '👨‍💼'},
+        {'nombre': 'Diego Lopez', 'cargo': 'Director General', 'avatar': '👨‍💼'},
         {'nombre': 'Ing. Ana Martínez', 'cargo': 'Jefa de Operaciones', 'avatar': '👩‍💼'},
         {'nombre': 'Ing. Miguel Torres', 'cargo': 'Especialista en Seguridad', 'avatar': '👨‍🔧'},
         {'nombre': 'Lic. Laura Garza', 'cargo': 'Atención a Clientes', 'avatar': '👩‍💻'},

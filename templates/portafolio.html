@@ -13,7 +13,11 @@
         <div class="grid-2col">
             {% for proyecto in proyectos %}
             <div class="portafolio-item animate-on-scroll">
+                {% if proyecto.imagen.endswith('.jpeg') or proyecto.imagen.endswith('.jpg') or proyecto.imagen.endswith('.png') %}
+                <img src="{{ url_for('static', filename='images/' + proyecto.imagen) }}" alt="{{ proyecto.titulo }}" class="portafolio-img">
+                {% else %}
                 <span class="portafolio-icon">{{ proyecto.imagen }}</span>
+                {% endif %}
                 <h3>{{ proyecto.titulo }}</h3>
                 <span class="categoria">{{ proyecto.categoria }}</span>
                 <p class="cliente">👤 {{ proyecto.cliente }}</p>
