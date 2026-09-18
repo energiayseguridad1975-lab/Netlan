@@ -141,7 +141,7 @@ def portafolio():
 @app.route('/nosotros')
 def nosotros():
     equipo = [
-        {'nombre': 'Diego Lopez', 'cargo': 'Director General', 'avatar': '👨‍💼'},
+        {'nombre': 'ING. Diego Lopez', 'cargo': 'Director General', 'avatar': '👨‍💼'},
         {'nombre': 'Ing. Ana Martínez', 'cargo': 'Jefa de Operaciones', 'avatar': '👩‍💼'},
         {'nombre': 'Ing. Miguel Torres', 'cargo': 'Especialista en Seguridad', 'avatar': '👨‍🔧'},
         {'nombre': 'Lic. Laura Garza', 'cargo': 'Atención a Clientes', 'avatar': '👩‍💻'},
