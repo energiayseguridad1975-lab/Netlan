@@ -122,7 +122,7 @@ def portafolio():
             'titulo': 'Sistema Hemsa', 
             'categoria': 'Seguridad', 
             'imagen': 'hemsa.jpeg',
-            'descripcion': 'Sistema de videovigilancia integral para instalaciones Hemsa con monitoreo en tiempo real.',
+            'descripcion': 'Se instalaron arcos antihurto para seguridad del establecimiento.',
             'cliente': 'Hemsa'
         },
         {
