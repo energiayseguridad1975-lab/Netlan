@@ -145,6 +145,13 @@ def portafolio():
             'imagen': 'villacero.jpeg',
             'descripcion': 'Sistema de control de accesos y automatización para planta Villacero.',
             'cliente': 'Villacero'
+        },
+        {
+            'titulo': 'Cedese', 
+            'categoria': 'Seguridad', 
+            'imagen': 'cedese.jpeg',
+            'descripcion': 'Sistema de seguridad para instalaciones Cedese.',
+            'cliente': 'Cedese'
         }
     ]
     return render_template('portafolio.html', 
