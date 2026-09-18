@@ -128,7 +128,7 @@ def portafolio():
         {
             'titulo': 'Proyecto Villacero', 
             'categoria': 'Automatización', 
-            'imagen': 'villacero.jpeg',
+            'imagen': 'cedese.jpeg',
             'descripcion': 'Sistema de control de accesos y automatización para planta Villacero.',
             'cliente': 'Villacero'
         }
