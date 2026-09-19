@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_mail import Mail, Message
 from flask_wtf import FlaskForm
 from wtforms import StringField, EmailField, TextAreaField, SubmitField, TelField
 from wtforms.validators import DataRequired, Email, Length
 from datetime import datetime
-import os
+from urllib.parse import quote
 
 # ============================================
 # CONFIGURACIÓN DE LA APLICACIÓN
@@ -12,17 +11,7 @@ import os
 app = Flask(__name__)
 app.secret_key = 'netlan-seguridad-monterrey-2024'
 
-# ============================================
-# CONFIGURACIÓN DE EMAIL (FLASK-MAIL)
-# ============================================
-app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
-app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
-app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'True') == 'True'
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'dlopez@netlanweb.com')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', '')
-app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER', 'dlopez@netlanweb.com')
-
-mail = Mail(app)
+WHATSAPP_NUMERO = '528110828156'
 
 # ============================================
 # FORMULARIO DE CONTACTO
@@ -178,28 +167,8 @@ def nosotros():
 def contacto():
     form = ContactForm()
     if form.validate_on_submit():
-        try:
-            msg = Message(
-                subject=f'Nuevo mensaje de contacto - {form.nombre.data}',
-                sender=form.email.data,
-                recipients=['dlopez@netlanweb.com'],
-                body=f"""
-Nuevo mensaje recibido desde el formulario de contacto de NETLANWEB.
-
---- Datos del remitente ---
-Nombre: {form.nombre.data}
-Email: {form.email.data}
-Teléfono: {form.telefono.data}
-
---- Mensaje ---
-{form.mensaje.data}
-"""
-            )
-            mail.send(msg)
-            flash('¡Mensaje enviado con éxito! Un asesor se pondrá en contacto contigo en las próximas 24 horas.', 'success')
-        except Exception as e:
-            flash('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o llámanos al 81 1082 8156.', 'danger')
-            app.logger.error(f'Error sending email: {str(e)}')
+        texto = quote(f"🎯 *Nuevo mensaje de contacto*\n\n*Nombre:* {form.nombre.data}\n*Email:* {form.email.data}\n*Teléfono:* {form.telefono.data}\n\n*Mensaje:*\n{form.mensaje.data}")
+        return redirect(f'https://wa.me/{WHATSAPP_NUMERO}?text={texto}')
     return render_template('contacto.html', 
                          form=form,
                          titulo="Contacto",
