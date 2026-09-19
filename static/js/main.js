@@ -147,3 +147,4 @@ window.enviarWhatsApp = function() {
 
 console.log('🔒 NETLANWEB - Seguridad y Tecnología');
 console.log('🚀 Sitio web cargado correctamente');
+});
