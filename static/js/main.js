@@ -136,20 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // ==========================================
 // ENVIAR POR WHATSAPP
 // ==========================================
-function enviarWhatsApp() {
-    const nombre = document.querySelector('input[name="nombre"]')?.value || '';
-    const email = document.querySelector('input[name="email"]')?.value || '';
-    const telefono = document.querySelector('input[name="telefono"]')?.value || '';
-    const mensaje = document.querySelector('textarea[name="mensaje"]')?.value || '';
-    
-    if (!nombre || !telefono || !mensaje) {
-        alert('Por favor, completa al menos tu nombre, teléfono y mensaje.');
-        return;
-    }
-    
-    const texto = encodeURIComponent(`🎯 *Nuevo mensaje de contacto*\n\n*Nombre:* ${nombre}\n*Email:* ${email}\n*Teléfono:* ${telefono}\n\n*Mensaje:*\n${mensaje}`);
-    window.location.href = `https://wa.me/528110828156?text=${texto}`;
-}
 
 console.log('🔒 NETLANWEB - Seguridad y Tecnología');
 console.log('🚀 Sitio web cargado correctamente');
