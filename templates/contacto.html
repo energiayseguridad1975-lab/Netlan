@@ -50,7 +50,7 @@
                     
                     <div class="form-group">
                         {{ form.nombre.label }}
-                        {{ form.nombre(class="form-control", placeholder="Tu nombre completo") }}
+                        {{ form.nombre(class="form-control", placeholder="Tu nombre completo", required=True) }}
                         {% if form.nombre.errors %}
                             {% for error in form.nombre.errors %}
                                 <span class="error">❌ {{ error }}</span>
